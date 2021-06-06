@@ -127,7 +127,7 @@
       };
     };
   } //
-    utils.lib.eachDefaultSystem (system:
+    utils.lib.eachSystem [ "aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ] (system:
       let
         pkgs = import nixpkgs { inherit system; overlays = [ self.overlay ]; };
       in
